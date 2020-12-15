@@ -1,6 +1,7 @@
 import { Typography } from '@material-ui/core';
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { TextField, Button, Paper } from '@material-ui/core';
 import Post from './Post/Post';
 import useStyles from './styles';
 
