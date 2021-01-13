@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardActions, CardContent, CardMedia, Button, Typography } from '@material-ui/core';
+import { Card, CardActions, CardContent, CardMedia, Button, Typography, Grid } from '@material-ui/core';
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import DeleteIcon from '@material-ui/icons/Delete';
 import MoreHorizIcon from '@material-ui/icons/MoreHoriz';
@@ -32,18 +32,23 @@ const Post = ({ post, setCurrentId }) => {
             </div>
             <Typography className={classes.title} variant="h4" gutterBottom>{post.title}</Typography>
             <CardContent>
-                <Typography variant="h5" gutterBottom>{post.message}s</Typography>
+                <Typography variant="h6" gutterBottom>{post.message}</Typography>
             </CardContent>
             <CardActions>
-                <Button size="small" color="primary" onClick={() => { dispatch(likePost(post._id)) }}>
-                    <ThumbUpAltIcon fontSize="small" />
-                    Like
-                    {post.likeCount}
-                </Button>
-                <Button size="small" color="primary" onClick={() => { dispatch(deletePost(post._id)) }}>
-                    <DeleteIcon fontSize="small" />
-                    Delete
-                </Button>
+                <Grid container>
+                    <Grid container item xs={6}>
+                        <Button size="small" color="primary" onClick={() => { dispatch(likePost(post._id)) }}>
+                            {post.likeCount}&nbsp;
+                            <ThumbUpAltIcon fontSize="medium" />
+                            &nbsp;Like
+                        </Button>
+                    </Grid>
+                    <Grid container item xs={6} justify="flex-end" >
+                        <Button size="small" color="primary" align="right" onClick={() => { dispatch(deletePost(post._id)) }}>
+                            Delete&nbsp;<DeleteIcon fontSize="small" />
+                        </Button>
+                    </Grid>
+                </Grid>
             </CardActions>
 
         </Card>
