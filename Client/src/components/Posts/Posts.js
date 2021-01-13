@@ -1,8 +1,6 @@
-import { Typography } from '@material-ui/core';
 import React from 'react';
-import { Grid, CircularProgress } from '@material-ui/core'
+import { Grid, CircularProgress, TextField, Button, Paper, Typography } from '@material-ui/core'
 import { useSelector } from 'react-redux';
-import { TextField, Button, Paper } from '@material-ui/core';
 import Post from './Post/Post';
 import useStyles from './styles';
 

@@ -28,19 +28,18 @@ const Post = ({ post, setCurrentId }) => {
                 </Button>
             </div>
             <div className={classes.details}>
-                <Typography variant="body2" color="textSecondary">{post.tags.map((tag) => `#{tag}`)}</Typography>
+                <Typography variant="body5" color="textSecondary">{post.tags.map((tag) => `#${tag} `)}</Typography>
             </div>
             <Typography className={classes.title} variant="h4" gutterBottom>{post.title}</Typography>
             <CardContent>
-                <Typography variant="h6" gutterBottom>{post.message}</Typography>
+                <Typography variant="body" color="textSecondary" gutterBottom>{post.message}</Typography>
             </CardContent>
             <CardActions>
                 <Grid container>
                     <Grid container item xs={6}>
                         <Button size="small" color="primary" onClick={() => { dispatch(likePost(post._id)) }}>
-                            {post.likeCount}&nbsp;
                             <ThumbUpAltIcon fontSize="medium" />
-                            &nbsp;Like
+                            &nbsp;Like&nbsp;{post.likeCount}
                         </Button>
                     </Grid>
                     <Grid container item xs={6} justify="flex-end" >
